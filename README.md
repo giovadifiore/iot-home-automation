@@ -31,7 +31,7 @@ The client, moreover,  periodically sends the **temperature** read from the rela
 
 The user button on the board is used to simulate asynchronous events to be sent to the centralized server. In this PoC, the user button produces an alert in the Web interface.
 
-This client is implemented in C and uses the HAL library provided by ST Microelectronics. The client also uses the [parson](https://github.com/kgabis/parson) library to handle JSON messages sent between client and server (thanks to [kgabis](https://github.com/kgabis)).
+This client is implemented in C and uses the HAL library provided by ST Microelectronics.
 
 Server
 -------------
