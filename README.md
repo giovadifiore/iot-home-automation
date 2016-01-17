@@ -37,7 +37,7 @@ Server
 -------------
 The server is implemented using NodeJS common libraries and it handles two communication ends: the former to the client board, using the USB serial protocol, and the latter with the Web application, using [WebSocket](http://www.w3.org/TR/2011/WD-websockets-20110419/) standard APIs.
 
-On the client board interface, the server receives JSON messages that need to be interpreted as simple response (i.e. ACK) to control actions, or completely asynchronous signals triggered my environment events (e.g. door opening, temperature hazard, etc... ). The server is always listening for incoming messages that are buffered into a queue: in this way the Web application end (i.e. the WebSocket wrapper on the server-side) can extract them in a decoupled manner without affecting receive performance.
+On the client board interface, the server receives JSON messages that need to be interpreted as simple response (i.e. ACK) to control actions, or completely asynchronous signals triggered by environment events (e.g. door opening, temperature hazard, etc... ). The server is always listening for incoming messages that are buffered into a queue: in this way the Web application end (i.e. the WebSocket wrapper on the server-side) can extract them in a decoupled manner without affecting receive performance.
 
 When the user log in the Web application, the server performs a number of pair attempts to the board. The communication protocol executes the **pairing** and then the board recognizes the server as an host to be contacted when events happen. Both server and client mutually recognize to be one end of the communication and the user in the Web application gets notified of the pair complete event, becoming ready to interacts with the system.
 
