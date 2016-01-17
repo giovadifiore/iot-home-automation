@@ -1,0 +1,471 @@
+/**
+ * 
+ * @brief Main application less file
+ * @author Giovanni Di Fiore
+ * 
+ */
+
+@import "elements.less";
+
+@mainColor: #2dafcb; // light blue color
+@mainColorForeground: #fff;
+@muteColor: #aaa;
+@secondaryColor: #3c763d; // green color
+@secondaryColorLighter: #dff0d8;
+@dangerColor: #d9534f;
+@successColor: @secondaryColor;
+@topBarLinkColor: #666;
+
+@ambraColor: #ffbf01;
+@greenColor: #00f12d;
+@redColor: #ff4242;
+@blueColor: #0090ff;
+
+/**
+ * 
+ * General styles
+ * 
+ */
+.brand {
+	color: #fff;
+	width: 260px;
+	text-align: left;
+	height: 60px;
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 60px;
+	background: #32323a;
+	b {
+		color: #2DAFCB;
+	}
+}
+.loader {
+	background: url(../img/loader.gif);
+	width: 220px;
+	height: 20px;
+	&.center {
+		margin: 0 auto;
+	}
+}
+.modal {
+	.modal-heading {
+		background: #32323a;
+		min-height: 60px;
+		padding: 0 20px;
+	}
+}
+.modal-backdrop.in {
+	opacity: .8;
+}
+
+.toggle {
+	&.flat-onoff {
+		min-width: 70px;
+		border-radius: 20px;
+		.toggle-handle {
+			height: 28px;
+			width: 28px;
+			border-radius: 28px;
+			margin-left: -30px;
+			margin-top: 2px;
+		}
+		.toggle-on.btn {
+			padding-right: 34px;
+		}
+		.toggle-off.btn {
+			padding-left: 34px;
+		}
+		&.off {
+			.toggle-handle {
+				margin-left: 30px;
+			}
+		}
+	}
+	&.btn-xs {
+		min-height: 28px;
+		.toggle-handle {
+			.rounded(22px);
+			padding: 0;
+			height: 22px;
+			width: 24px;
+			margin-left: -26px;
+		}
+		.toggle-on.btn {
+			padding-right: 26px;
+		}
+		.toggle-off.btn {
+			padding-left: 26px;
+		}
+		.toggle-on,
+		.toggle-off {
+			line-height: 24px;
+		}
+		&.off {
+			.toggle-handle {
+				margin-left: 26px;
+			}
+		}
+	}
+}
+
+.alert {
+	@duration: 400ms;
+	-webkit-animation-duration: @duration;
+	-moz-animation-duration: @duration;
+	-o-animation-duration: @duration;
+	span {
+		vertical-align: top;
+		line-height: 45px;
+		&[data-notify="icon"]
+		{
+			margin-right: 10px;
+		}
+		&[data-notify="title"]
+		{
+			font-weight: 700;
+		}
+	}
+}
+
+
+.panel-primary {
+	
+	margin-bottom: 0;
+	.rounded(4px);
+	
+	.panel-left {
+		.fa {
+			font-size: 90px;
+			line-height: 158px;
+			opacity: 0.6;
+		}
+	}
+	
+	.panel-right {
+		padding: 30px 0;
+		.board-light-toggle-container {
+			margin: 30px 0;
+		}
+		> label {
+			font-weight: 400;
+			font-size: 16px;
+		}
+	}
+	
+	&.ambra {
+		background: lighten(@ambraColor, 30);
+		border-color: fade(@ambraColor, 50);		
+		.panel-left {
+			background: @ambraColor;
+		}
+		.panel-right {
+			color: #333;
+		}
+	}
+	
+	&.red {
+		background: lighten(@redColor, 5);
+		border-color: fade(@redColor, 50);		
+		.panel-left {
+			background: @redColor;
+		}
+		.panel-right {
+			color: #fff;
+		}
+	}
+	
+	&.blue {
+		background: lighten(@blueColor, 15);
+		border-color: fade(@blueColor, 50);		
+		.panel-left {
+			background: @blueColor;
+		}
+		.panel-right {
+			color: #fff;
+		}
+	}
+	
+	&.green {
+		background: lighten(@greenColor, 15);
+		border-color: fade(@greenColor, 50);		
+		.panel-left {
+			background: @greenColor;
+			color: #333;
+		}
+		.panel-right {
+			color: #333;
+		}
+	}
+}
+
+
+/**
+ * 
+ * Menu
+ * 
+ */
+ .navbar-side {
+ 	i {
+ 		font-size: 20px;	
+ 	}
+ 	a {
+ 		font-size: 17px;
+ 		position: relative;
+ 		&.active-menu {
+ 			&:after {
+				display: inline-block;
+				font-family: FontAwesome;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				transform: translate(0, 0);
+				position: absolute;
+				right: -2px;
+				top: -1px;
+				font-size: 46px;
+				color: #f3f3f3;
+				content: '\f0d9';
+	 		}
+ 		}
+ 		
+ 	}
+ }
+
+
+
+/**
+ * 
+ * Pages
+ * 
+ */
+.pages-container {
+	.page:not(.active-page)
+	{
+		display: none;
+	}
+}
+
+
+/**
+ * 
+ * General board info
+ * 
+ */
+.board-info-panel {
+	label {
+		margin: 0;
+	}
+	.board-info-connection {
+		font-size: 18px;
+		.ion-usb {
+	 		font-size: 26px;
+	 		line-height: 26px;
+	 		margin-right: 5px;
+	 	}
+	}
+	.octicon-circuit-board {
+		font-size: 18px;
+	}
+	.board-name-value {
+		line-height: 34px;
+		font-size: 16px;
+	}
+}
+
+.navbar-top-links {
+	margin-right: 10px;
+	li.open {
+		.dropdown-toggle, .dropdown-toggle:hover {
+			background: @mainColor;
+			color: @mainColorForeground;
+			i {
+				color: @mainColorForeground;
+			}
+		}
+	}
+	a, i {
+		color: @topBarLinkColor;
+	}
+	.dropdown-menu {
+		margin: 0;
+		li {
+			padding: 5px 10px;
+		}
+	}
+}
+ 
+ 
+/**
+ * 
+ * Temperature container
+ * 
+ */
+.board-temperature-container {
+	margin: 15px 0 30px;
+	h2 {
+		font-weight: normal;
+		font-size: 46px;
+		color: @muteColor;
+	}
+	&.temperature-monitoring {
+		h2 {
+			color: #333;
+		}
+	}
+	label {
+		font-size: 18px;
+		font-weight: 300;
+		color: @muteColor;
+	} 	
+}
+ 
+/**
+ * 
+ * Number of devices
+ * 
+ */
+.number-of-devices {
+	.ion-ios-checkmark-empty {
+		line-height: 14px;
+		font-size: 28px;
+	}
+}
+
+
+
+
+/**
+ * 
+ * Controllo porte
+ * 
+ */
+.panel-door {
+	
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 0;
+	
+	&.green {
+		background: @secondaryColorLighter;
+		border-color: fade(@secondaryColor, 50);
+		.rounded(4px);
+	}
+	.octicon-sign-in {
+		font-size: 90px;
+		line-height: 158px;
+		opacity: 0.6;
+	}
+	.panel-door-info {		
+		color: @secondaryColor;
+		padding: 15px 0;
+	}
+	.panel-right > label {
+		font-weight: 400;
+		font-size: 16px;
+	}
+	.board-door-wrapper {
+		margin: 20px 0;
+		.board-door-container {
+			background: #fff;
+			padding: 10px;
+			display: inline-block;
+			.rounded(4px);
+			.door-status {
+				.rounded(4px);
+				padding: 4px;
+				background: @dangerColor;
+				color: #fff;
+				&.open {
+					background: @successColor;
+				}
+				&.checking {
+					background: @ambraColor;
+				}
+			}
+		}
+	}
+	.board-autolights-toggle-container {
+		span, .toggle {
+			vertical-align: top;
+			line-height: 28px;			
+		}
+		> span {
+			margin-right: 10px;
+		}
+	}
+	&.empty-door {
+		border: 1px dashed @muteColor;
+		.panel-door-info {
+			color: @muteColor;
+			width: 100%;
+			padding-top: 60px;
+		}
+	}
+	
+}
+
+
+
+/**
+ * 
+ * Controllo luci
+ * 
+ */
+.panel-light {
+
+	.panel-right {
+		padding: 30px 0;
+		.board-light-toggle-container {
+			margin: 30px 0;
+		}
+		> label {
+			font-weight: 400;
+			font-size: 16px;
+		}
+	}
+}
+
+  
+
+/**
+ * 
+ * Experimentals
+ * 
+ */
+.panel-experimental {
+	.board-experimental-container {
+		margin: 30px 0;
+	}
+}
+#experimentalOutput {
+	width: 100%;
+}
+#clearExpOutput {
+	font-size: 30px;
+}
+
+
+
+/**
+ * 
+ * Modals
+ * 
+ */
+#noBoardConnected {
+	.modal-body {
+		padding: 12% 0;
+	}
+	.heading {
+		margin: 20px 0 40px;
+	}
+	.octicon-home {
+		font-size: 76px;
+		color: @muteColor;
+	}
+	.waiting {
+		color: @muteColor;
+		font-weight: normal;
+		margin: 10px 0;
+	}
+}
