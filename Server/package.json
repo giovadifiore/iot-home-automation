@@ -1,0 +1,27 @@
+{
+  "name": "IOT Home automation (Server)",
+  "version": "0.1.0",
+  "description": "A proof-of-concept of a Client-Server (NodeJS and C) implementation for domestic control and home automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "node.js",
+    "eclipse",
+    "nodeclipse"
+  ],
+  "author": "Giovanni Di Fiore",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "express": "^4.12.3",
+    "log4js": "^0.6.25",
+    "options": "^0.0.6",
+    "serialport": "^1.7.1",
+    "sleep": "^2.0.0",
+    "swig": "^1.4.2",
+    "ws": "^0.7.1"
+  }
+}

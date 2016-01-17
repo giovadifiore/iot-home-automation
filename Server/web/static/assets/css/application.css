@@ -1,0 +1,398 @@
+/**
+ * 
+ * @brief Main application less file
+ * @author Giovanni Di Fiore
+ * 
+ */
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/**
+ * 
+ * General styles
+ * 
+ */
+.brand {
+  color: #fff;
+  width: 260px;
+  text-align: left;
+  height: 60px;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 60px;
+  background: #32323a;
+}
+.brand b {
+  color: #2DAFCB;
+}
+.loader {
+  background: url(../img/loader.gif);
+  width: 220px;
+  height: 20px;
+}
+.loader.center {
+  margin: 0 auto;
+}
+.modal .modal-heading {
+  background: #32323a;
+  min-height: 60px;
+  padding: 0 20px;
+}
+.modal-backdrop.in {
+  opacity: .8;
+}
+.toggle.flat-onoff {
+  min-width: 70px;
+  border-radius: 20px;
+}
+.toggle.flat-onoff .toggle-handle {
+  height: 28px;
+  width: 28px;
+  border-radius: 28px;
+  margin-left: -30px;
+  margin-top: 2px;
+}
+.toggle.flat-onoff .toggle-on.btn {
+  padding-right: 34px;
+}
+.toggle.flat-onoff .toggle-off.btn {
+  padding-left: 34px;
+}
+.toggle.flat-onoff.off .toggle-handle {
+  margin-left: 30px;
+}
+.toggle.btn-xs {
+  min-height: 28px;
+}
+.toggle.btn-xs .toggle-handle {
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  border-radius: 22px;
+  padding: 0;
+  height: 22px;
+  width: 24px;
+  margin-left: -26px;
+}
+.toggle.btn-xs .toggle-on.btn {
+  padding-right: 26px;
+}
+.toggle.btn-xs .toggle-off.btn {
+  padding-left: 26px;
+}
+.toggle.btn-xs .toggle-on,
+.toggle.btn-xs .toggle-off {
+  line-height: 24px;
+}
+.toggle.btn-xs.off .toggle-handle {
+  margin-left: 26px;
+}
+.alert {
+  -webkit-animation-duration: 400ms;
+  -moz-animation-duration: 400ms;
+  -o-animation-duration: 400ms;
+}
+.alert span {
+  vertical-align: top;
+  line-height: 45px;
+}
+.alert span[data-notify="icon"] {
+  margin-right: 10px;
+}
+.alert span[data-notify="title"] {
+  font-weight: 700;
+}
+.panel-primary {
+  margin-bottom: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.panel-primary .panel-left .fa {
+  font-size: 90px;
+  line-height: 158px;
+  opacity: 0.6;
+}
+.panel-primary .panel-right {
+  padding: 30px 0;
+}
+.panel-primary .panel-right .board-light-toggle-container {
+  margin: 30px 0;
+}
+.panel-primary .panel-right > label {
+  font-weight: 400;
+  font-size: 16px;
+}
+.panel-primary.ambra {
+  background: #ffe69a;
+  border-color: rgba(255, 191, 1, 0.5);
+}
+.panel-primary.ambra .panel-left {
+  background: #ffbf01;
+}
+.panel-primary.ambra .panel-right {
+  color: #333;
+}
+.panel-primary.red {
+  background: #ff5c5c;
+  border-color: rgba(255, 66, 66, 0.5);
+}
+.panel-primary.red .panel-left {
+  background: #ff4242;
+}
+.panel-primary.red .panel-right {
+  color: #fff;
+}
+.panel-primary.blue {
+  background: #4db1ff;
+  border-color: rgba(0, 144, 255, 0.5);
+}
+.panel-primary.blue .panel-left {
+  background: #0090ff;
+}
+.panel-primary.blue .panel-right {
+  color: #fff;
+}
+.panel-primary.green {
+  background: #3fff62;
+  border-color: rgba(0, 241, 45, 0.5);
+}
+.panel-primary.green .panel-left {
+  background: #00f12d;
+  color: #333;
+}
+.panel-primary.green .panel-right {
+  color: #333;
+}
+/**
+ * 
+ * Menu
+ * 
+ */
+.navbar-side i {
+  font-size: 20px;
+}
+.navbar-side a {
+  font-size: 17px;
+  position: relative;
+}
+.navbar-side a.active-menu:after {
+  display: inline-block;
+  font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  position: absolute;
+  right: -2px;
+  top: -1px;
+  font-size: 46px;
+  color: #f3f3f3;
+  content: '\f0d9';
+}
+/**
+ * 
+ * Pages
+ * 
+ */
+.pages-container .page:not(.active-page) {
+  display: none;
+}
+/**
+ * 
+ * General board info
+ * 
+ */
+.board-info-panel label {
+  margin: 0;
+}
+.board-info-panel .board-info-connection {
+  font-size: 18px;
+}
+.board-info-panel .board-info-connection .ion-usb {
+  font-size: 26px;
+  line-height: 26px;
+  margin-right: 5px;
+}
+.board-info-panel .octicon-circuit-board {
+  font-size: 18px;
+}
+.board-info-panel .board-name-value {
+  line-height: 34px;
+  font-size: 16px;
+}
+.navbar-top-links {
+  margin-right: 10px;
+}
+.navbar-top-links li.open .dropdown-toggle,
+.navbar-top-links li.open .dropdown-toggle:hover {
+  background: #2dafcb;
+  color: #ffffff;
+}
+.navbar-top-links li.open .dropdown-toggle i,
+.navbar-top-links li.open .dropdown-toggle:hover i {
+  color: #ffffff;
+}
+.navbar-top-links a,
+.navbar-top-links i {
+  color: #666666;
+}
+.navbar-top-links .dropdown-menu {
+  margin: 0;
+}
+.navbar-top-links .dropdown-menu li {
+  padding: 5px 10px;
+}
+/**
+ * 
+ * Temperature container
+ * 
+ */
+.board-temperature-container {
+  margin: 15px 0 30px;
+}
+.board-temperature-container h2 {
+  font-weight: normal;
+  font-size: 46px;
+  color: #aaaaaa;
+}
+.board-temperature-container.temperature-monitoring h2 {
+  color: #333;
+}
+.board-temperature-container label {
+  font-size: 18px;
+  font-weight: 300;
+  color: #aaaaaa;
+}
+/**
+ * 
+ * Number of devices
+ * 
+ */
+.number-of-devices .ion-ios-checkmark-empty {
+  line-height: 14px;
+  font-size: 28px;
+}
+/**
+ * 
+ * Controllo porte
+ * 
+ */
+.panel-door {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.panel-door.green {
+  background: #dff0d8;
+  border-color: rgba(60, 118, 61, 0.5);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.panel-door .octicon-sign-in {
+  font-size: 90px;
+  line-height: 158px;
+  opacity: 0.6;
+}
+.panel-door .panel-door-info {
+  color: #3c763d;
+  padding: 15px 0;
+}
+.panel-door .panel-right > label {
+  font-weight: 400;
+  font-size: 16px;
+}
+.panel-door .board-door-wrapper {
+  margin: 20px 0;
+}
+.panel-door .board-door-wrapper .board-door-container {
+  background: #fff;
+  padding: 10px;
+  display: inline-block;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.panel-door .board-door-wrapper .board-door-container .door-status {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 4px;
+  background: #d9534f;
+  color: #fff;
+}
+.panel-door .board-door-wrapper .board-door-container .door-status.open {
+  background: #3c763d;
+}
+.panel-door .board-door-wrapper .board-door-container .door-status.checking {
+  background: #ffbf01;
+}
+.panel-door .board-autolights-toggle-container span,
+.panel-door .board-autolights-toggle-container .toggle {
+  vertical-align: top;
+  line-height: 28px;
+}
+.panel-door .board-autolights-toggle-container > span {
+  margin-right: 10px;
+}
+.panel-door.empty-door {
+  border: 1px dashed #aaaaaa;
+}
+.panel-door.empty-door .panel-door-info {
+  color: #aaaaaa;
+  width: 100%;
+  padding-top: 60px;
+}
+/**
+ * 
+ * Controllo luci
+ * 
+ */
+.panel-light .panel-right {
+  padding: 30px 0;
+}
+.panel-light .panel-right .board-light-toggle-container {
+  margin: 30px 0;
+}
+.panel-light .panel-right > label {
+  font-weight: 400;
+  font-size: 16px;
+}
+/**
+ * 
+ * Experimentals
+ * 
+ */
+.panel-experimental .board-experimental-container {
+  margin: 30px 0;
+}
+#experimentalOutput {
+  width: 100%;
+}
+#clearExpOutput {
+  font-size: 30px;
+}
+/**
+ * 
+ * Modals
+ * 
+ */
+#noBoardConnected .modal-body {
+  padding: 12% 0;
+}
+#noBoardConnected .heading {
+  margin: 20px 0 40px;
+}
+#noBoardConnected .octicon-home {
+  font-size: 76px;
+  color: #aaaaaa;
+}
+#noBoardConnected .waiting {
+  color: #aaaaaa;
+  font-weight: normal;
+  margin: 10px 0;
+}
